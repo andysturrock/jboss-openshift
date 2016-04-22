@@ -46,17 +46,6 @@
 		<remote.server.url>http://127.0.0.1:8080/</remote.server.url>
 	</properties>
 
-	<profiles>
-
-		<!-- Configure the JBoss GA Maven repository -->
-		<profile>
-			<id>jboss-ga-repository</id>
-			<activation>
-				<property>
-					<name>env.JBOSS_REPO</name>
-					<value>jboss-ga-repository</value>
-				</property>
-			</activation>
 			<repositories>
 				<repository>
 					<id>jboss-ga-repository</id>
@@ -81,8 +70,6 @@
 					</snapshots>
 				</pluginRepository>
 			</pluginRepositories>
-		</profile>
-	</profiles>
 
 
 	<dependencyManagement>
