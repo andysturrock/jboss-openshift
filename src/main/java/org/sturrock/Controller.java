@@ -14,6 +14,9 @@ import javax.xml.bind.JAXBException;
 
 import org.jboss.logging.Logger;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiResponse;
 
 @Path("/")
 public class Controller {
@@ -30,6 +33,11 @@ public class Controller {
 	@GET
 	@Path("/ping")
 	@Produces(MediaType.APPLICATION_XML)
+	@ApiOperation(value = "Ping", notes = "The Ping endpoint returns a response to show the application is alive.", response = PingResponse.class, tags = {
+			"User" })
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Profile information for a user", response = PingResponse.class),
+			@ApiResponse(code = 200, message = "Unexpected error", response = PingResponse.class) })
 	public Response ping() {
 		log.info("Ping called");
 		PingResponse response = new PingResponse();

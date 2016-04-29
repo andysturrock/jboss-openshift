@@ -46,30 +46,30 @@
 		<remote.server.url>http://127.0.0.1:8080/</remote.server.url>
 	</properties>
 
-			<repositories>
-				<repository>
-					<id>jboss-ga-repository</id>
-					<url>http://maven.repository.redhat.com/techpreview/all</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
-			<pluginRepositories>
-				<pluginRepository>
-					<id>jboss-ga-plugin-repository</id>
-					<url>http://maven.repository.redhat.com/techpreview/all</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</pluginRepository>
-			</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>jboss-ga-repository</id>
+			<url>http://maven.repository.redhat.com/techpreview/all</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-ga-plugin-repository</id>
+			<url>http://maven.repository.redhat.com/techpreview/all</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 
 	<dependencyManagement>
@@ -171,11 +171,11 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${version.war.plugin}</version>
 				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+					<failOnMissingWebXml>true</failOnMissingWebXml>
 					<webResources>
 						<resource>
 							<directory>src/main/webapp</directory>
-							<!-- enable filtering -->
 							<filtering>true</filtering>
 							<includes>
 								<include>index.html</include>
